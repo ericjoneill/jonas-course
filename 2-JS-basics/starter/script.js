@@ -161,3 +161,172 @@ var john = {
 // }
 
 // console.log(john, mark)
+
+// var bills, tipF, tipped
+
+// tipped = [];
+
+// bills = [124, 48, 268];
+
+// CHALLENGE 5
+
+// var bills, tipF, tipped
+
+// tipped = [];
+
+// bills = [124, 48, 268, 180, 42];
+
+// function howMuchToTip(much){
+//     for (let i = 0; i < much.length; i++){
+//         switch(true){
+//             case much[i] < 50:
+//             tipped.push(much[i] * .2);
+//             break;
+//             case much[i] > 50 && much[i] < 200:
+//             tipped.push(much[i] * .15)
+//             break;
+//             case much[i] > 200:
+//             tipped.push(much[i] * .1)
+//             break;
+//             default:
+//             tipped.push('idk');
+//             break;
+//         }
+//     }
+//     return tipped;
+// }
+
+// console.log(howMuchToTip(bills));
+
+// var bills, tipF, tipped, i, bill
+// i = 0;
+// bill = {
+//     value: [124, 48, 268, 180, 42],
+//     calcTip: function(){
+//         for (let i = 0; i < this.value.length; i++){
+//             var value = this.value[i];
+//             this.tips = [];
+//             if (value < 50){
+//                 this.tips.push(value * .2)
+//             } else if (value > 50 && value < 200){
+//                 (this.tips.push(value * .15))
+//             } else{
+//                 (this.tips.push(value * .1))
+//             }
+//             // this.value[i] < 50 ? (this.tip.push(this.value * .2)) : 
+//             // this.value[i] > 50 && this.value[i] < 200 ? (this.tip.push(this.value * .15)) :
+//             // this.value[i] > 200 ? (this.tip.push(this.value * .1)) : 
+//             // this.tip.push("an");
+
+//         }
+//         return this.tips;
+//     }
+// };
+
+// bill.calcTip;
+
+// console.log(bill)
+
+
+// var bills = {
+//     fullName: 'John Smith',
+//     bills: [124, 48, 268, 180, 42],
+//     calcTips: function() {
+//         this.tips = []; // here is a new prop in our object
+//         this.finalValues = []; // another new prop
+//         for (var i = 0; i < this.bills.length; i++) // lets go through each bills
+//         {
+//             // Determine % based on tipping rules
+//             var bill = this.bills[i]; // makes it easy and less typing
+//             var percentage; // our % depending on if stuff
+            
+//             if (bill < 50){ // bill here = our bills prop
+//                 percentage = .2;
+//             } else if(bill >= 50 && bill < 200) {
+//                 percentage = .15;
+//             } else {
+//                 percentage = .1;
+//             }
+
+//             // Add results to the corresponding arrays
+//             this.tips[i] = bill * percentage;
+//             this.finalValues[i] = bill + bill * percentage;
+//         }
+//     }
+// }
+
+// bills.calcTips()
+// console.log(bills)
+
+
+
+
+var john = {
+    fullName: 'John Stamos',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function(){
+        this.tips = [];
+        this.finalValues = [];
+        for (let i = 0; i < this.bills.length; i++){
+            var tip;
+            var bill = this.bills[i];
+            var percentage;
+
+            if (bill < 50){
+                percentage = .2;
+                } else if(bill >= 50 && bill < 200) {
+                percentage = .15;
+                } else {
+                percentage = .1;
+                }
+            tip = bill * percentage;
+            finalValue = bill + bill * percentage;
+            this.tips[i] = tip;
+            this.finalValues[i] = finalValue;
+
+        }
+    }
+}
+
+
+
+var mark = {
+    fullName: 'Mark Graham',
+    bills: [77, 375, 110, 45],
+    calcTips: function(){
+        this.tips = []
+        this.finalValues = []
+        for (let i = 0; i < this.bills.length; i++)
+        {
+            var bill = this.bills[i];
+            var percentage;
+            if (bill < 100){
+                percentage = .2
+            } else if (bill > 100 && bill < 300){
+                percentage = .1
+            } else{
+                percentage = .25
+            }
+        this.tips[i] = bill * percentage
+        this.finalValues[i] = bill + bill * percentage
+        }
+    }
+}
+
+mark.calcTips()
+console.log(mark)
+
+var takencompare = function(v){
+    var total = 0;
+    for (let i = 0; i < v.length; i++)
+    {
+        total += v[i];
+    }
+    return total / v.length;
+}
+
+var mTotal = takencompare(mark.tips);
+var jTotal = takencompare(john.tips);
+
+
+console.log(takencompare(jTotal))
