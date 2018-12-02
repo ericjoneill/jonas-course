@@ -69,30 +69,95 @@
 
 // console.log (whatDoYouDo('teacher', 'John'));
 
-var bills, tipF, tipped
+// var bills, tipF, tipped
 
-tipped = [];
+// tipped = [];
 
-bills = [124, 48, 268];
+// bills = [124, 48, 268];
 
-function howMuchToTip(much){
-    for (let i = 0; i < much.length; i++){
-        switch(true){
-            case much[i] < 50:
-            tipped.push(much[i] * .2);
-            break;
-            case much[i] > 50:
-            tipped.push(much[i] * .15)
-            break;
-            case much[i] > 200:
-            tipped.push(much[i] * .1)
-            break;
-            default:
-            tipped.push('idk');
-            break;
-        }
+// function howMuchToTip(much){
+//     for (let i = 0; i < much.length; i++){
+//         switch(true){
+//             case much[i] < 50:
+//             tipped.push(much[i] * .2);
+//             break;
+//             case much[i] > 50 && much[i] < 200:
+//             tipped.push(much[i] * .15)
+//             break;
+//             case much[i] > 200:
+//             tipped.push(much[i] * .1)
+//             break;
+//             default:
+//             tipped.push('idk');
+//             break;
+//         }
+//     }
+//     return tipped;
+// }
+
+// console.log(howMuchToTip(bills));
+
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1992,
+//     family: ['Sally', 'James', 'Luther'],
+//     job: 'teacher',
+//     isMarried: false,
+//     calcAge: function() {
+//         this.age = 2018 - this.birthYear
+//     }
+// }
+
+// john.calcAge();
+
+// console.log(john);
+
+var mMass, mHeight, jMass, jHeight, mBMI, jBMI, btr, ans;
+
+mMass = 200
+mHeight = 6
+jMass = 250
+jHeight = 7
+mBMI = mMass / mHeight^2;
+jBMI = jMass / jHeight^2;
+// if (mBMI > jBMI){
+//     alert('Mark BMI is greater. Mark vs John: ' + mBMI + ' & ' + jBMI + '.');
+// } else{
+//     alert('John BMI is greater. Mark vs John: ' + mBMI + ' & ' + jBMI + '.');
+// }
+
+var mark = {
+    firstName: 'Mark',
+    lastName: 'Hasselhoff',
+    mass: 250,
+    height: 7,
+    favMovie: 'Aquaman',
+    calcBMI: function(){ 
+        this.BMI = this.mass / this.height^2
+        return this.BMI
     }
-    return tipped;
+    }
+
+var john = {
+    firstName: 'John',
+    lastName: 'Brown',
+    mass: 200,
+    height: 6,
+    favMovie: 'Antman',
+    calcBMI: function(){ 
+        this.BMI = this.mass / this.height^2
+        return this.BMI
+    }
 }
 
-console.log(howMuchToTip(bills));
+
+// if (mark.calcBMI() === john.calcBMI()){
+//     console.log('they are the same');
+// } else if (mark.calcBMI() > john.calcBMI()){
+//     console.log(mark.firstName + ' ' + mark.lastName + ' has a higher BMI.')
+// } else {
+//     console.log(john.firstName + ' ' + john.lastName + ' has a higher BMI.')
+// }
+
+// console.log(john, mark)
