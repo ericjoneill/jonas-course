@@ -314,13 +314,13 @@ var mark = {
 }
 
 mark.calcTips()
-console.log(mark)
+john.calcTips()
 
-var takencompare = function(v){
+function takencompare(v){
     var total = 0;
     for (let i = 0; i < v.length; i++)
     {
-        total += v[i];
+        total = total + v[i];
     }
     return total / v.length;
 }
@@ -329,4 +329,13 @@ var mTotal = takencompare(mark.tips);
 var jTotal = takencompare(john.tips);
 
 
-console.log(takencompare(jTotal))
+if (mTotal === jTotal){
+    console.log('they are the same');
+} else if (mTotal > jTotal){
+    console.log('Mark\'s total of ' + mTotal + ' is greater than John\'s of ' + jTotal + '.')
+} else {
+    console.log('John is greater: ' + jTotal + ' > ' + mTotal + '.')
+}
+
+
+// console.log(takencompare(mark.tips));
