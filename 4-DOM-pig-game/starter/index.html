@@ -33,9 +33,12 @@
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             <button class="btn-adjustWinner"><i class="ion-ios"></i>
-            <input type="text" id="myInput" oninput="adjustWinner()"></button>
-            
+            <input type="text" placeholder="How much to win?" id="myInput" oninput="adjustWinner()"></button>
+            <!-- The above field's placeholder means the user can adjust the score needed
+            to win the game. the default score needed is 100 but this allows the user to
+        end the game sooner if they would like. -->
             <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="dice-5.png" alt="Dice" class="diceClone">
         </div>
         
         <script src="app.js"></script>
