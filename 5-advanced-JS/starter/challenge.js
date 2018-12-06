@@ -50,7 +50,7 @@ function Question(question, answers, correct){
 
 }
 
-Question.prototype.displayQuestion() = function() {
+Question.prototype.displayQuestion = function() {
     console.log(this.question)
 
     for (let i = 0; i < this.answers.length; i++){
@@ -62,7 +62,7 @@ var q1 = new Question('Is Javascript the coolest programming language in the wor
                         ['Yes', 'No'],
                         0)
 
-var q2 = new Question('What is the name of your corse\'s teacher?',
+var q2 = new Question('What is the name of your course\'s teacher?',
                         ['John',
                         'Michael',
                         'Jonas'],
@@ -79,4 +79,14 @@ var questions = [q1, q2, q3];
 
 var n = Math.floor(Math.random() * questions.length);
 
-questions[n]
+questions[n].displayQuestion()
+
+var answer = parseInt(prompt(questions[n].question + '\n\nPlease select the correct answer: ' + (function)))
+
+// console.log(questions[n].correct)
+
+if (questions[n].correct === answer){
+    alert('Good job!')
+} else{
+    alert('Sorry, reload the page to try again.')
+}
