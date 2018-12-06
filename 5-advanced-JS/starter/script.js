@@ -177,57 +177,91 @@
 
 // Lecture: Functions returning functions
 
-function interviewQuestion(job){
-    if (job === 'designer'){
-        return function(name){
-            console.log(name + ', can you please explain what UX design is?')
-        }
-    } else if (job === 'teacher'){
-        return function(name){
-        console.log('What subject do you teach, ' + name + '?')
-        }
-    } else {
-        return function(name){
-            console.log('Hello ' + name + ', what do you do?')
-        }
-    }
+// function interviewQuestion(job){
+//     if (job === 'designer'){
+//         return function(name){
+//             console.log(name + ', can you please explain what UX design is?')
+//         }
+//     } else if (job === 'teacher'){
+//         return function(name){
+//         console.log('What subject do you teach, ' + name + '?')
+//         }
+//     } else {
+//         return function(name){
+//             console.log('Hello ' + name + ', what do you do?')
+//         }
+//     }
+// }
+
+
+// var designerQuestion = interviewQuestion('designer')
+// var teacherQuestion =  interviewQuestion('teacher')
+
+// teacherQuestion('Eric')
+// teacherQuestion('Elmo')
+// designerQuestion('Shady')
+
+// interviewQuestion('hell')('Satan')
+
+
+
+// function whatType(t){
+//     if (t === 'breeder'){
+//         return function(n){
+//             console.log(n + ' is a ' + t + ' who is always at the DCC.')
+//         }
+//     } else if (t === 'pokemaniac'){
+//         return function(n){
+//             console.log('watch out! ' + n + ' is known as a ' + t + '.')
+//         }
+//     } else if (t === 'gym leader'){
+//         return function(n){
+//             console.log('Wow, a ' + t + '! ' + n + ' must raise good pkmn.')
+//         }
+//     } else{
+//         return function(n){
+//             console.log('I think ' + n + ' is just an ordinary trainer.')
+//         }
+//     }
+// }
+
+
+// var breeder = whatType('breeder');
+// var pokemaniac = whatType('pokemaniac');
+// var leader = whatType('leader');
+
+// pokemaniac('Alan')
+/*
+function game(){
+    var score = Math.random() * 10;
+    console.log(score >= 5)
+}
+game()
+*/
+
+
+// (function(goodLuck){
+//         var score = Math.random() * 10;
+//         console.log(score >= 5 - goodLuck)
+//     })(5);
+
+// console.log(score)
+
+// function retirement(retirementAge){
+//     return function(name){
+//         return name + ' will retire in ' + (66 - retirementAge) + ' years.'
+//     }
+// }
+
+// console.dir(retirement)
+
+var addTo = function(passed){
+
+    var add = function(inner){
+        return passed + inner;
+    };
+
+    return add;
 }
 
-
-var designerQuestion = interviewQuestion('designer')
-var teacherQuestion =  interviewQuestion('teacher')
-
-teacherQuestion('Eric')
-teacherQuestion('Elmo')
-designerQuestion('Shady')
-
-interviewQuestion('hell')('Satan')
-
-
-
-function whatType(t){
-    if (t === 'breeder'){
-        return function(n){
-            console.log(n + ' is a ' + t + ' who is always at the DCC.')
-        }
-    } else if (t === 'pokemaniac'){
-        return function(n){
-            console.log('watch out! ' + n + ' is known as a ' + t + '.')
-        }
-    } else if (t === 'gym leader'){
-        return function(n){
-            console.log('Wow, a ' + t + '! ' + n + ' must raise good pkmn.')
-        }
-    } else{
-        return function(n){
-            console.log('I think ' + n + ' is just an ordinary trainer.')
-        }
-    }
-}
-
-
-var breeder = whatType('breeder');
-var pokemaniac = whatType('pokemaniac');
-var leader = whatType('leader');
-
-pokemaniac('Alan')
+console.dir(addTo(9))
