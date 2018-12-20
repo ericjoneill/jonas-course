@@ -219,42 +219,48 @@
 // console.log(age2)
 // console.log(retirement)
 
-function addFourAges (a, b, c, d){
-    return a + b + c + d;
-}
+// function addFourAges (a, b, c, d){
+//     return a + b + c + d;
+// }
 
-var sum1 = addFourAges(18, 1, 4, 2)
+// var sum1 = addFourAges(18, 1, 4, 2)
 
-var ages = [18, 30, 12, 21]
-var sum2 = addFourAges.apply(null, ages)
+// var ages = [18, 30, 12, 21]
+// var sum2 = addFourAges.apply(null, ages)
 
-const sum3 = addFourAges(...ages)
-console.log(sum3)
+// const sum3 = addFourAges(...ages)
+// console.log(sum3)
 
 
-//ES5
-function isFullAge5() {
-    //console.log(arguments);
-    var argsArr = Array.prototype.slice.call(arguments);
+// //ES5
+// function isFullAge5() {
+//     //console.log(arguments);
+//     var argsArr = Array.prototype.slice.call(arguments);
     
-    argsArr.forEach(function(cur) {
-        console.log((2016 - cur) >= 18);
-    })
+//     argsArr.forEach(function(x) {
+//         console.log((2016 - x) >= 18);
+//     })
+// }
+
+// //ES6
+// function isFullAge6(...years) {
+//     years.forEach(x => console.log( (2016 - x) >= 18));
+// }
+
+// isFullAge6(1990, 1999, 1965, 2016, 1987);
+
+
+// //ES5
+// function isFullAge5(limit) {
+//     var argsArr = Array.prototype.slice.call(arguments, 1);
+
+//     argsArr.forEach(function(x) {
+//         console.log((2016 - x) >= limit);
+//     })
+// }
+
+function isFullAge(...years) {
+    years.forEach(x => console.log(2016 - x) >= 18)
 }
 
-//ES6
-function isFullAge6(...years) {
-    years.forEach(cur => console.log( (2016 - cur) >= 18));
-}
-
-isFullAge6(1990, 1999, 1965, 2016, 1987);
-
-
-//ES5
-function isFullAge5(limit) {
-    var argsArr = Array.prototype.slice.call(arguments, 1);
-
-    argsArr.forEach(function(cur) {
-        console.log((2016 - cur) >= limit);
-    })
-}
+isFullAge(1990, 1999, 1965, 2016, 1987)
